@@ -12,13 +12,13 @@ spec:
     repoURL: {{ .Values.repoUrl }}
     path: add-ons/keda
     targetRevision: {{ .Values.targetRevision }}
-    helm:
-      values: |
-        keda:
-        {{- toYaml .Values.keda | nindent 10 }}
-      parameters:
-      - name: keda.serviceAccount.name
-        value: {{ .Values.keda.serviceAccountName }}
+    # helm:
+    #   values: |
+    #     keda:
+    #     {{- toYaml .Values.keda | nindent 10 }}
+    #   parameters:
+    #   - name: keda.serviceAccount.name
+    #     value: {{ .Values.keda.serviceAccountName }}
   destination:
     server: {{ .Values.destinationServer | default "https://kubernetes.default.svc" }}
     namespace: keda
