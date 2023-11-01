@@ -5,7 +5,7 @@ karpenter:
     kubernetes.io/os: linux
   settings:
     aws:
-      clusterName:
-      clusterEndpoint:
+      # clusterName: 
+      # clusterEndpoint:
       defaultInstanceProfile:
       interruptionQueueName:
