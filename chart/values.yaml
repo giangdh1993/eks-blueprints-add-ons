@@ -141,7 +141,7 @@ karpenter:
 # Keda Values
 keda:
   enable: true
-  createNamespace: true
+  # createNamespace: true
   # serviceAccountName:
 
 # Metrics Server Values
