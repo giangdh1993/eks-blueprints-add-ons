@@ -87,7 +87,7 @@ certManagerCsiDriver:
 # Cluster Autoscaler Values
 clusterAutoscaler:
   enable: true
-  serviceAccountName:
+  # serviceAccountName:
 
 # Datadog Operator
 datadogOperator:
@@ -133,10 +133,10 @@ vault:
 karpenter:
   enable: true
   createNamespace: true
-  serviceAccountName:
-  controllerClusterEndpoint:
-  awsDefaultInstanceProfile:
-  interruptionQueueName:
+  # serviceAccountName:
+  # controllerClusterEndpoint:
+  # awsDefaultInstanceProfile:
+  # interruptionQueueName:
 
 # Keda Values
 keda:
