@@ -42,7 +42,7 @@ awsForFluentBit:
 
 # AWS Load Balancer Controller Values
 awsLoadBalancerController:
-  enable: false
+  enable: true
   createNamespace: true
   serviceAccountName:
   podDisruptionBudget:
@@ -64,7 +64,7 @@ awsLoadBalancerController:
 
 # AWS Node Termination Handler Values
 awsNodeTerminationHandler:
-  enable: false
+  enable: true
   serviceAccountName:
 
 # AWS Otel Collector Values
@@ -76,7 +76,7 @@ awsOtelCollector:
 
 # Cert Manager Values
 certManager:
-  enable: false
+  enable: true
   createNamespace: true
   serviceAccountName:
 
@@ -86,7 +86,7 @@ certManagerCsiDriver:
 
 # Cluster Autoscaler Values
 clusterAutoscaler:
-  enable: false
+  enable: true
   serviceAccountName:
 
 # Datadog Operator
@@ -127,11 +127,11 @@ grafana:
 
 # Vault default Values
 vault:
-  enable: false
+  enable: true
 
 # Karpenter Values
 karpenter:
-  enable: false
+  enable: true
   createNamespace: true
   serviceAccountName:
   controllerClusterEndpoint:
@@ -140,13 +140,13 @@ karpenter:
 
 # Keda Values
 keda:
-  enable: false
+  enable: true
   createNamespace: true
   serviceAccountName:
 
 # Metrics Server Values
 metricsServer:
-  enable: false
+  enable: true
 
 # Ondat Values
 ondat:
