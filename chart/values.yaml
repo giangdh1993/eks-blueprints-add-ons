@@ -86,7 +86,7 @@ certManagerCsiDriver:
 
 # Cluster Autoscaler Values
 clusterAutoscaler:
-  enable: true
+  enable: false
   serviceAccountName:
 
 # Datadog Operator
@@ -131,7 +131,7 @@ vault:
 
 # Karpenter Values
 karpenter:
-  enable: true
+  enable: false
   createNamespace: true
   serviceAccountName:
   controllerClusterEndpoint:
