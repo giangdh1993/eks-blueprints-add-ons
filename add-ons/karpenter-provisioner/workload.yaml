@@ -34,3 +34,8 @@ spec:
       ebs:
         volumeType: gp3
         volumeSize: 100Gi
+  tags:
+    Name: "bpm-fecredit-dev-node"
+    KarpenterProvisionerName: "workload"
+    karpenter.sh/discovery: bpm-fecredit-dev
+    NodeType: "workload"
