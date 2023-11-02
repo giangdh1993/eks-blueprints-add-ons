@@ -23,7 +23,7 @@ metadata:
 spec:
   subnetSelector:
     karpenter.sh/discovery: "bpm-fecredit-dev" # replace with your cluster name
-    cidr: "main"
+    aws-ids: "subnet-0f75825dd24a81104,subnet-01f0d4e72fce18fbb"
   securityGroupSelector:
     karpenter.sh/discovery: "bpm-fecredit-dev" # replace with your cluster name
   blockDeviceMappings:
