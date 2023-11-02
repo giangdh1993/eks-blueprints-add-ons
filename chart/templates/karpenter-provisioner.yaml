@@ -1,4 +1,4 @@
-{{- if and (.Values.karpenter-provisioner.enable) (.Values.karpenter.enable) -}}
+{{- if and (.Values.karpenterprovisioner) (.Values.karpenterprovisioner.enable) (.Values.karpenter.enable) -}}
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
