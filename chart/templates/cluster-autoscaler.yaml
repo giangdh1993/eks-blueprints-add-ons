@@ -12,17 +12,6 @@ spec:
     repoURL: {{ .Values.repoUrl }}
     path: add-ons/cluster-autoscaler
     targetRevision: {{ .Values.targetRevision }}
-    helm:
-      values: |
-        cluster-autoscaler:
-        {{- toYaml .Values.clusterAutoscaler | nindent 10 }}
-      parameters:
-      - name: cluster-autoscaler.awsRegion
-        value: {{ .Values.region }}
-      - name: cluster-autoscaler.rbac.serviceAccount.name
-        value: {{ .Values.clusterAutoscaler.serviceAccountName }}
-      - name: cluster-autoscaler.autoDiscovery.clusterName
-        value: {{ .Values.clusterName }}
   destination:
     server: {{ .Values.destinationServer | default "https://kubernetes.default.svc" }}
     namespace: kube-system

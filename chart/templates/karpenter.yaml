@@ -12,21 +12,6 @@ spec:
     repoURL: {{ .Values.repoUrl }}
     path: add-ons/karpenter
     targetRevision: {{ .Values.targetRevision }}
-    helm:
-      values: |
-        karpenter:
-        {{- toYaml .Values.karpenter | nindent 10 }}
-      parameters:
-        - name: karpenter.serviceAccount.name
-          value: {{ .Values.karpenter.serviceAccountName }}
-        - name: karpenter.settings.aws.clusterName
-          value: {{ .Values.clusterName }}
-        - name: karpenter.settings.aws.clusterEndpoint
-          value: {{ .Values.karpenter.controllerClusterEndpoint }}
-        - name: karpenter.settings.aws.defaultInstanceProfile
-          value: {{ .Values.karpenter.awsDefaultInstanceProfile }}
-        - name: karpenter.settings.aws.interruptionQueueName
-          value: {{ .Values.karpenter.awsInterruptionQueueName }}
   destination:
     server: {{ .Values.destinationServer | default "https://kubernetes.default.svc" }}
     namespace: karpenter
