@@ -138,6 +138,10 @@ karpenter:
   # awsDefaultInstanceProfile:
   # awsInterruptionQueueName:
 
+karpenter-provisioner:
+  enable: true
+
+
 # Keda Values
 keda:
   enable: true
