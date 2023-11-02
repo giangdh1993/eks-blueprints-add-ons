@@ -1,8 +1,8 @@
-{{- if and (.Values.karpenter) (.Values.karpenter.enable) -}}
+{{- if and (.Values.karpenter.enable) (.Values.karpenter-provisioner.enable) (.Values.karpenter-provisioner) -}}
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: karpenter
+  name: karpenter-provisioner
   namespace: {{ .Values.argoNamespace | default "argocd" }}
   finalizers:
     - resources-finalizer.argocd.argoproj.io
@@ -10,11 +10,8 @@ spec:
   project: {{ .Values.argoProject | default "default" }}
   source:
     repoURL: {{ .Values.repoUrl }}
-    path: add-ons/karpenter
+    path: add-ons/karpenter-provisioner
     targetRevision: {{ .Values.targetRevision }}
-    helm:
-      valueFiles:
-        - values.yaml
   destination:
     server: {{ .Values.destinationServer | default "https://kubernetes.default.svc" }}
     namespace: karpenter
