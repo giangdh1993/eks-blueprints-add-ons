@@ -19,6 +19,8 @@ spec:
       parameters:
         - name: karpenter.serviceAccount.name
           value: {{ .Values.karpenter.serviceAccountName }}
+        - name: karpenter.serviceAccount.annotations.eks\.amazonaws\.com/role-arn
+          value: {{ .Values.karpenter.rolearn}}
         - name: karpenter.settings.aws.clusterName
           value: {{ .Values.clusterName }}
         - name: karpenter.settings.aws.clusterEndpoint

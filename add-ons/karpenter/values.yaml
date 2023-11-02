@@ -19,7 +19,7 @@ serviceAccount:
   # If not set and create is true, a name is generated using the fullname template.
   name: ""
   # -- Additional annotations for the ServiceAccount.
-  annotations: {}
+  annotations:
 # -- Specifies additional rules for the core ClusterRole.
 additionalClusterRoleRules: []
 serviceMonitor:

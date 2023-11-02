@@ -135,8 +135,9 @@ karpenter:
   createNamespace: true
   # serviceAccountName:
   # controllerClusterEndpoint:
-  # awsDefaultInstanceProfile:
-  # awsInterruptionQueueName:
+  awsDefaultInstanceProfile: Karpenter-bpm-fecredit-dev-20231102045056718200000001
+  awsInterruptionQueueName: Karpenter-bpm-fecredit-dev
+  rolearn: arn:aws:iam::881188331213:role/KarpenterIRSA-bpm-fecredit-dev-20231102044057157200000004
 
 karpenterprovisioner:
   enable: true
