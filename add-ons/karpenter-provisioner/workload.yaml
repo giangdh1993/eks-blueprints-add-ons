@@ -23,6 +23,7 @@ metadata:
 spec:
   subnetSelector:
     karpenter.sh/discovery: "bpm-fecredit-dev" # replace with your cluster name
+    cidr: "main"
   securityGroupSelector:
     karpenter.sh/discovery: "bpm-fecredit-dev" # replace with your cluster name
   blockDeviceMappings:
