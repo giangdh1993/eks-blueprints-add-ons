@@ -3,7 +3,7 @@ repoUrl: 'https://github.com/aws-samples/eks-blueprints-add-ons.git'
 targetRevision: HEAD
 region: ''
 account: ''
-clusterName: ''
+clusterName: 'bpm-fecredit-dev'
 destinationServer: ''
 argoNamespace: ''
 argoProject: ''
@@ -136,7 +136,7 @@ karpenter:
   # serviceAccountName:
   # controllerClusterEndpoint:
   # awsDefaultInstanceProfile:
-  # interruptionQueueName:
+  # awsInterruptionQueueName:
 
 # Keda Values
 keda:
