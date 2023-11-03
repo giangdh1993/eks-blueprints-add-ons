@@ -1,0 +1,45 @@
+# This example provisioner will provision general purpose instances
+apiVersion: karpenter.sh/v1alpha5
+kind: Provisioner
+metadata:
+  name: workload-camunda
+spec:
+  requirements:
+    # Include general purpose instance families
+    - key: node.kubernetes.io/instance-type
+      operator: In
+      values: [t3.xlarge, t3.medium, t3.large]
+    # Exclude small instance sizes
+    - key: karpenter.sh/capacity-type
+      operator: In
+      values: ["ondemand"]      
+  taints:
+    - key: workloadcamunda
+      value: "yes"
+      effect: NoSchedule    
+  providerRef:
+    name: workload-camunda
+---
+apiVersion: karpenter.k8s.aws/v1alpha1
+kind: AWSNodeTemplate
+metadata:
+  name: workload-camunda
+spec:
+  subnetSelector:
+    aws-ids: "subnet-0f75825dd24a81104,subnet-01f0d4e72fce18fbb"
+  securityGroupSelector:
+    karpenter.sh/discovery: "bpm-fecredit-dev" # replace with your cluster name
+  blockDeviceMappings:
+    - deviceName: /dev/xvda
+      ebs:
+        volumeType: gp3
+        volumeSize: 10Gi
+    - deviceName: /dev/xvdb
+      ebs:
+        volumeType: gp3
+        volumeSize: 20Gi
+  tags:
+    Name: "bpm-fecredit-dev-node-camunda"
+    KarpenterProvisionerName: "workloadcamunda"
+    karpenter.sh/discovery: bpm-fecredit-dev
+    NodeType: "workloadcamunda"
