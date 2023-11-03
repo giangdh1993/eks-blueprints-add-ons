@@ -15,7 +15,7 @@ spec:
       values: ["spot"]      
   taints:
     - key: workloadspot
-      value: yes
+      value: "yes"
       effect: NoSchedule    
   providerRef:
     name: workload-spot
