@@ -13,6 +13,10 @@ spec:
     - key: karpenter.sh/capacity-type
       operator: In
       values: ["spot"]      
+  taints:
+    - key: workloadspot
+      value: yes
+      effect: NoSchedule    
   providerRef:
     name: workload-spot
 ---
