@@ -140,7 +140,7 @@ karpenter:
   rolearn: arn:aws:iam::881188331213:role/KarpenterIRSA-bpm-fecredit-dev-20231102044057157200000004
 
 karpenterprovisioner:
-  enable: true
+  enable: false
 
 
 # Keda Values
