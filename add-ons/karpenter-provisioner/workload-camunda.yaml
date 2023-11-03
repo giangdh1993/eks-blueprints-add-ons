@@ -12,7 +12,7 @@ spec:
     # Exclude small instance sizes
     - key: karpenter.sh/capacity-type
       operator: In
-      values: ["ondemand"]      
+      values: ["on-demand"]      
   taints:
     - key: workloadcamunda
       value: "yes"
