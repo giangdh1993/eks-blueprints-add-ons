@@ -99,10 +99,10 @@ strimziKafkaOperator:
 
 # External DNS Values
 externalDns:
-  enable: false
+  enable: true
   createNamespace: true
-  serviceAccountName:
-  zoneIdFilter:
+  # serviceAccountName:
+  # zoneIdFilter:
 
 # External Secrets Operator
 externalSecrets:
