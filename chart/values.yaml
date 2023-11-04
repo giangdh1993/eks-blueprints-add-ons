@@ -145,6 +145,9 @@ karpenterprovisioner:
 storageclass:
   enable: true
 
+gitlab:
+  enable: true
+
 # Keda Values
 keda:
   enable: true
