@@ -142,6 +142,8 @@ karpenter:
 karpenterprovisioner:
   enable: true
 
+storageclass:
+  enable: true
 
 # Keda Values
 keda:
