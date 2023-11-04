@@ -1,8 +1,18 @@
 apiVersion: v2
-name: nexus
+name: gitlab
+description: A Helm chart for Gitlab
+
+# Application charts are a collection of templates that can be packaged into versioned archives
+# to be deployed.
 type: application
-version: 1.0.0
-appVersion: 7.5.1
+
+# The chart version. This version number should be incremented each time you make changes
+# to the chart and its templates, including the app version.
+version: 0.1.0
+
+# Version number of the application being deployed. This version number should be
+# incremented each time you make changes to the application.
+appVersion: "1.0"
 dependencies:
 - name: gitlab
   version: 7.5.1

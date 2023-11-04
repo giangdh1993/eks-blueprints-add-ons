@@ -146,7 +146,7 @@ storageclass:
   enable: true
 
 gitlab:
-  enable: false
+  enable: true
 
 # Keda Values
 keda:

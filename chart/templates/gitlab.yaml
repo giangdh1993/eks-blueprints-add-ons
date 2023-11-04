@@ -13,12 +13,11 @@ spec:
     path: add-ons/gitlab
     targetRevision: {{ .Values.targetRevision }}
     helm:
-      values: |
-        gitlab:
-        {{- toYaml .Values.gitlab | nindent 10 }}
+      valueFiles:
+        - values.yaml
   destination:
     server: {{ .Values.destinationServer | default "https://kubernetes.default.svc" }}
-    namespace: gitlab
+    namespace: gitlab-system
   syncPolicy:
     automated:
       prune: true
