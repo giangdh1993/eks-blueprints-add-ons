@@ -147,6 +147,7 @@ storageclass:
 
 gitlab:
   enable: true
+  createNamespace: true  
 
 # Keda Values
 keda:

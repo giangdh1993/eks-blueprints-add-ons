@@ -13,6 +13,7 @@ spec:
     path: add-ons/gitlab
     targetRevision: {{ .Values.targetRevision }}
     helm:
+      version: v3
       valueFiles:
         - values.yaml
   destination:
