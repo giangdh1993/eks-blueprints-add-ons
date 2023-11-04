@@ -389,7 +389,7 @@ gitlab:
 
       backups:
         bucket: bpm-fecredit-dev-gitlab-backups
-        tmpBucket: tmp
+        tmpBucket: bpm-fecredit-dev-gitlab-backups-tmp
 
       ## https://docs.gitlab.com/charts/charts/globals#outgoing-email
       ## Microsoft Graph Mailer settings
@@ -1284,6 +1284,11 @@ gitlab:
     ## https://docs.gitlab.com/charts/charts/gitlab/toolbox
     toolbox:
       replicas: 1
+      backups:
+        objectStorage:
+          config:
+            secret: storage-config
+            key: config
       antiAffinityLabels:
         matchLabels:
           app: gitaly
