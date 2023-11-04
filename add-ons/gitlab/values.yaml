@@ -1283,9 +1283,13 @@ gitlab:
   gitlab:
     ## https://docs.gitlab.com/charts/charts/gitlab/toolbox
     toolbox:
+      serviceAccount:
+        enabled: true
+        create: true
       replicas: 1
       backups:
         objectStorage:
+          backend: s3
           config:
             secret: storage-config
             key: config
