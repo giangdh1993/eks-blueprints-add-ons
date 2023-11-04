@@ -12,10 +12,6 @@ spec:
     repoURL: {{ .Values.repoUrl }}
     path: add-ons/storageclass
     targetRevision: {{ .Values.targetRevision }}
-    helm:
-      values: |
-        storageclass:
-        {{- toYaml .Values.storageclass | nindent 10 }}
   destination:
     server: {{ .Values.destinationServer | default "https://kubernetes.default.svc" }}
     namespace: storageclass
