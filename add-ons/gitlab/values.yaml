@@ -171,7 +171,7 @@ gitlab:
     gitaly:
       enabled: true
       persistence:
-        storageClass: ebs-gp3
+        storageClass: resize-sc
         size: 50Gi
       authToken: {}
         # secret:
@@ -1142,7 +1142,7 @@ gitlab:
   ## https://docs.gitlab.com/charts/installation/deployment.html#redis
   redis:
     persistence:
-      storageClass: ebs-gp3
+      storageClass: resize-sc
       size: 20Gi
     install: true
     auth:
@@ -1160,7 +1160,7 @@ gitlab:
   postgresql:
     install: true
     persistence:
-      storageClass: ebs-gp3
+      storageClass: resize-sc
       size: 30Gi
     auth:
       ## These need to be set, for the sake of bitnami/postgresql upgrade patterns.
@@ -1288,6 +1288,8 @@ gitlab:
         create: true
       replicas: 1
       backups:
+        cron:
+          enabled: true
         objectStorage:
           backend: s3
           config:
