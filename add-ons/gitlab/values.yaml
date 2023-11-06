@@ -500,23 +500,9 @@ gitlab:
         autoLinkUser: []
         externalProviders: []
         allowBypassTwoFactor: []
-        providers:
-        - { name: 'saml',
-            label: 'gitlab.webtools.fecredit.dev Keycloak',
-            groups_attribute: 'roles',
-            external_groups: ['gitlab.webtools.fecredit.dev:external'],
-            args: {
-                    assertion_consumer_service_url: 'https://gitlab.webtools.fecredit.dev/users/auth/saml/callback',
-                    idp_cert_fingerprint: '8D:98:62:E2:32:E9:FE:79:4C:B9:E9:46:37:25:EA:F7:F9:84:33:18',
-                    idp_sso_target_url: 'https://auth.mgnt.fecredit.dev/realms/fec-staff/protocol/saml/clients/gitlab.webtools.fecredit.dev',
-                    issuer: 'gitlab.webtools.fecredit.dev',
-                    attribute_statements: {
-                      name: ['name'],
-                      username: ['name'],
-                      email: ['email'] },
-                    name_identifier_format: 'urn:oasis:names:tc:SAML:2.0:nameid-format:persistent' } }        
-        # - secret: gitlab-google-oauth2
-        #   key: provider
+        providers:       
+        - secret: gitlab-secret-open-connect
+          key: provider
 
       ## https://docs.gitlab.com/charts/charts/globals#kerberos
       kerberos:
