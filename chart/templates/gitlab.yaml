@@ -8,17 +8,14 @@ metadata:
   - resources-finalizer.argocd.argoproj.io
 spec:
   project: {{ .Values.argoProject | default "default" }}
-  sources:
-    - repoURL: {{ .Values.repoUrl }}
-      path: add-ons/gitlab/template
-      targetRevision: {{ .Values.targetRevision }}
-    - repoURL: {{ .Values.repoUrl }}
-      path: add-ons/gitlab
-      targetRevision: {{ .Values.targetRevision }}
-      helm:
-        version: v3
-        valueFiles:
-          - values.yaml          
+  source:
+    repoURL: {{ .Values.repoUrl }}
+    path: add-ons/gitlab
+    targetRevision: {{ .Values.targetRevision }}
+    helm:
+      version: v3
+      valueFiles:
+        - values.yaml
   destination:
     server: {{ .Values.destinationServer | default "https://kubernetes.default.svc" }}
     namespace: gitlab
