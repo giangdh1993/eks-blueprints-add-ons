@@ -493,11 +493,11 @@ gitlab:
         autoSignInWithProvider:
         syncProfileFromProvider: []
         syncProfileAttributes: [email]
-        allowSingleSignOn: [saml]
+        allowSingleSignOn: [saml, openid_connect]
         blockAutoCreatedUsers: true
         autoLinkLdapUser: false
         autoLinkSamlUser: false
-        autoLinkUser: []
+        autoLinkUser: "openid_connect"
         externalProviders: []
         allowBypassTwoFactor: []
         providers:       
