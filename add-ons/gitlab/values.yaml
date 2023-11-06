@@ -489,7 +489,7 @@ gitlab:
 
       ## https://docs.gitlab.com/charts/charts/globals#omniauth
       omniauth:
-        enabled: false
+        enabled: true
         autoSignInWithProvider:
         syncProfileFromProvider: []
         syncProfileAttributes: [email]
