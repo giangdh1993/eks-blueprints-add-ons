@@ -170,9 +170,9 @@ gitlab:
     ## https://docs.gitlab.com/charts/charts/globals#configure-gitaly-settings
     gitaly:
       enabled: true
-      persistence:
-        storageClass: resize-sc
-        size: 50Gi
+      # persistence:
+      #   storageClass: resize-sc
+      #   size: 50Gi
       authToken: {}
         # secret:
         # key:
@@ -1281,6 +1281,10 @@ gitlab:
   ## Settings for individual sub-charts under GitLab
   ## Note: Many of these settings are configurable via globals
   gitlab:
+    gitaly:
+      persistence:
+        storageClass: resize-sc
+        size: 100Gi      
     ## https://docs.gitlab.com/charts/charts/gitlab/toolbox
     toolbox:
       serviceAccount:
