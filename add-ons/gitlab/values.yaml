@@ -87,7 +87,7 @@ gitlab:
       class: alb
       annotations:
           alb.ingress.kubernetes.io/listen-ports: '[{"HTTPS":443}, {"HTTP":80}]'
-          alb.ingress.kubernetes.io/certificate-arn: arn:aws:acm:ap-southeast-1:881188331213:certificate/4087c92b-3899-4342-82bb-e09fc9cffff4
+          alb.ingress.kubernetes.io/certificate-arn: arn:aws:acm:ap-southeast-1:881188331213:certificate/7d302c62-061e-4a51-8e75-c3cc39e29779
           alb.ingress.kubernetes.io/scheme: internet-facing
           alb.ingress.kubernetes.io/target-type: 'ip'    
       enabled: true
