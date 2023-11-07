@@ -1257,9 +1257,14 @@ gitlab:
       config: |
         [[runners]]
           [runners.kubernetes]
-          image = "ubuntu:22.04"
+          image = "docker:20-dind"
           privileged = true
           {{- if .Values.global.minio.enabled }}
+          [[runners.kubernetes.volumes.host_path]]
+            name="docker"
+            read_only=true
+            mount_path="/var/run/docker.sock"
+            host_path="/var/run/docker.sock"          
           [runners.cache]
             Type = "s3"
             Path = "gitlab-runner"
