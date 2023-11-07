@@ -1246,6 +1246,8 @@ gitlab:
     install: true
     rbac:
       create: true
+      serviceAccountAnnotations:
+        eks.amazonaws.com/role-arn: arn:aws:iam::881188331213:role/gitlab
     runners:
       env:
         DOCKER_HOST: tcp://docker:2375
@@ -1262,7 +1264,7 @@ gitlab:
           [[runners.kubernetes.volumes.empty_dir]]
             name = "docker-emptydir"
             mount_path = "/var/run"
-            medium = "Memory"              
+            medium = "Memory"
           {{- if .Values.global.minio.enabled }}
           [runners.cache]
             Type = "s3"
@@ -1270,13 +1272,14 @@ gitlab:
             Shared = true
             [runners.cache.s3]
               ServerAddress = {{ include "gitlab-runner.cache-tpl.s3ServerAddress" . }}
-              BucketName = "runner-cache"
-              BucketLocation = "us-east-1"
+              BucketName = "bpm-fecredit-dev-gitlab-runner-cache"
+              BucketLocation = "ap-southeast-1"
               Insecure = false
           {{ end }}
     podAnnotations:
       gitlab.com/prometheus_scrape: "true"
       gitlab.com/prometheus_port: 9252
+    
 
   traefik:
     install: false
