@@ -127,7 +127,7 @@ grafana:
 
 # Vault default Values
 vault:
-  enable: true
+  enable: false
 
 # Karpenter Values
 karpenter:
