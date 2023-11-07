@@ -1247,6 +1247,9 @@ gitlab:
     rbac:
       create: true
     runners:
+      env:
+        DOCKER_HOST: tcp://docker:2375
+        DOCKER_TLS_CERTDIR: ""
       locked: false
       # Set secret to an arbitrary value because the runner chart renders the gitlab-runner.secret template only if it is not empty.
       # The parent/GitLab chart overrides the template to render the actual secret name.
