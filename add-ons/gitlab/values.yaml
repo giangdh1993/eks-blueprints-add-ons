@@ -1259,11 +1259,11 @@ gitlab:
           [runners.kubernetes]
             image = "ubuntu:20.04"
             privileged = true
-          {{- if .Values.global.minio.enabled }}
           [[runners.kubernetes.volumes.empty_dir]]
             name = "docker-emptydir"
             mount_path = "/var/run"
-            medium = "Memory"        
+            medium = "Memory"              
+          {{- if .Values.global.minio.enabled }}
           [runners.cache]
             Type = "s3"
             Path = "gitlab-runner"
