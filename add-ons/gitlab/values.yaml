@@ -1270,13 +1270,17 @@ gitlab:
             name = "docker-emptydir"
             mount_path = "/var/run"
             medium = "Memory"
+          [runners.kubernetes.node_selector]
+            "karpenter.sh/capacity-type" = "spot"
+          [runners.kubernetes.node_tolerations]
+            "workloadspot=yes" = "NoSchedule"
           {{- if .Values.global.minio.enabled }}
           [runners.cache]
             Type = "s3"
             Path = "gitlab-runner"
             Shared = true
             [runners.cache.s3]
-              ServerAddress = {{ include "gitlab-runner.cache-tpl.s3ServerAddress" . }}
+              ServerAddress = "s3.amazonaws.com"
               BucketName = "bpm-fecredit-dev-gitlab-runner-cache"
               BucketLocation = "ap-southeast-1"
               Insecure = false
