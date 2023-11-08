@@ -1243,6 +1243,7 @@ gitlab:
   ## Installation & configuration of gitlab/gitlab-runner
   ## See requirements.yaml for current version
   gitlab-runner:  
+    replicas: 3
     envVars:
       - name: KUBERNETES_SERVICE_ACCOUNT
         value: gitlab-gitlab-runner
