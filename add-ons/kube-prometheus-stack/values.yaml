@@ -903,7 +903,7 @@ kube-prometheus-stack:
     namespaceOverride: ""
     persistence:
       type: pvc
-      enabled: false
+      enabled: true
       storageClassName: resize-sc
       accessModes:
         - ReadWriteOnce
