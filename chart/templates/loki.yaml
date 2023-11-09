@@ -13,6 +13,7 @@ spec:
     path: add-ons/loki
     targetRevision: {{ .Values.targetRevision }}
     helm:
+      skipCrds: true
       values: |
         loki:
         {{- toYaml .Values.loki | nindent 10 }}
