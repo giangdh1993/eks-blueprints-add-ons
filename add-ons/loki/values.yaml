@@ -94,15 +94,11 @@ loki:
       {{- else }}
       auth_enabled: {{ .Values.loki.auth_enabled }}
       {{- end }}
-  
       {{- with .Values.loki.server }}
       server:
         {{- toYaml . | nindent 2}}
       {{- end}}
-  
-      memberlist:
-        bind_addr:
-          - ${MY_POD_IP}      
+      memberlist:     
       {{- if .Values.loki.memberlistConfig }}
         {{- toYaml .Values.loki.memberlistConfig | nindent 2 }}
       {{- else }}
@@ -124,12 +120,7 @@ loki:
       {{- end }}
   
       {{- if .Values.loki.commonConfig}}
-      common:
-        instance_addr: "${MY_POD_IP}"
-        ring:
-          kvstore:
-            store: memberlist
-          instance_addr: "${MY_POD_IP}"      
+      common:    
       {{- toYaml .Values.loki.commonConfig | nindent 2}}
         storage:
         {{- include "loki.commonStorageConfig" . | nindent 4}}
@@ -253,7 +244,9 @@ loki:
     # -- memberlist configuration (overrides embedded default)
     memberlistConfig: {}
     # -- Extra memberlist configuration
-    extraMemberlistConfig: {}
+    extraMemberlistConfig:
+      bind_addr:
+        - ${POD_IP}    
     # -- Tenants list to be created on nginx htpasswd file, with name and password keys
     tenants: []
     # -- Check https://grafana.com/docs/loki/latest/configuration/#server for more info on the server configuration.
