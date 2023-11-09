@@ -101,6 +101,8 @@ loki:
       {{- end}}
   
       memberlist:
+        bind_addr:
+          - ${MY_POD_IP}      
       {{- if .Values.loki.memberlistConfig }}
         {{- toYaml .Values.loki.memberlistConfig | nindent 2 }}
       {{- else }}
@@ -123,6 +125,11 @@ loki:
   
       {{- if .Values.loki.commonConfig}}
       common:
+        instance_addr: "${MY_POD_IP}"
+        ring:
+          kvstore:
+            store: memberlist
+          instance_addr: "${MY_POD_IP}"      
       {{- toYaml .Values.loki.commonConfig | nindent 2}}
         storage:
         {{- include "loki.commonStorageConfig" . | nindent 4}}
