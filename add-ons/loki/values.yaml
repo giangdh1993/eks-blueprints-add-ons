@@ -757,7 +757,8 @@ loki:
     # -- Comma-separated list of Loki modules to load for the write
     targetModule: "write"
     # -- Additional CLI args for the write
-    extraArgs: []
+    extraArgs:
+      - -config.expand-env=true
     # -- Environment variables to add to the write pods
     extraEnv:
         - name: POD_IP
@@ -950,7 +951,8 @@ loki:
     # run two targets, false will run 3 targets.
     legacyReadTarget: false
     # -- Additional CLI args for the read
-    extraArgs: []
+    extraArgs:
+      - -config.expand-env=true
     # -- Environment variables to add to the read pods
     extraEnv:
         - name: POD_IP
@@ -1054,7 +1056,8 @@ loki:
     # -- Comma-separated list of Loki modules to load for the read
     targetModule: "backend"
     # -- Additional CLI args for the backend
-    extraArgs: []
+    extraArgs:
+      - -config.expand-env=true
     # -- Environment variables to add to the backend pods
     extraEnv:
         - name: POD_IP
