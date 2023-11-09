@@ -273,6 +273,9 @@ reloader:
 kubePrometheusStack:
   enable: true
 
+loki:
+  enable: true
+
 # Kyverno Values
 kyverno:
   enable: false
