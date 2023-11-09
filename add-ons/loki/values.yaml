@@ -759,7 +759,11 @@ loki:
     # -- Additional CLI args for the write
     extraArgs: []
     # -- Environment variables to add to the write pods
-    extraEnv: []
+    extraEnv:
+        - name: POD_IP
+          valueFrom:
+            fieldRef:
+              fieldPath: status.podIP    
     # -- Environment variables from secrets or configmaps to add to the write pods
     extraEnvFrom: []
     # -- Lifecycle for the write container
@@ -948,8 +952,11 @@ loki:
     # -- Additional CLI args for the read
     extraArgs: []
     # -- Environment variables to add to the read pods
-    extraEnv: []
-    # -- Environment variables from secrets or configmaps to add to the read pods
+    extraEnv:
+        - name: POD_IP
+          valueFrom:
+            fieldRef:
+              fieldPath: status.podIP    # -- Environment variables from secrets or configmaps to add to the read pods
     extraEnvFrom: []
     # -- Lifecycle for the read container
     lifecycle: {}
@@ -1049,8 +1056,11 @@ loki:
     # -- Additional CLI args for the backend
     extraArgs: []
     # -- Environment variables to add to the backend pods
-    extraEnv: []
-    # -- Environment variables from secrets or configmaps to add to the backend pods
+    extraEnv:
+        - name: POD_IP
+          valueFrom:
+            fieldRef:
+              fieldPath: status.podIP    # -- Environment variables from secrets or configmaps to add to the backend pods
     extraEnvFrom: []
     # -- Init containers to add to the backend pods
     initContainers: []
