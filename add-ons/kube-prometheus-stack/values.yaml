@@ -964,7 +964,7 @@ kube-prometheus-stack:
       ## TLS configuration for grafana Ingress
       ## Secret must be manually created in the namespace
       ##
-      tls: []
+      tls:
       # - secretName: grafana-general-tls
         hosts:
         - grafana.mgnt.fecredit.vn
