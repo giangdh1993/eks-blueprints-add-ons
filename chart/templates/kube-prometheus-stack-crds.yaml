@@ -14,7 +14,7 @@ spec:
     targetRevision: {{ .Values.targetRevision }}
   destination:
     server: {{ .Values.destinationServer | default "https://kubernetes.default.svc" }}
-    namespace: kube-prometheus-stack
+    namespace: monitoring
   syncPolicy:
     automated:
       prune: true

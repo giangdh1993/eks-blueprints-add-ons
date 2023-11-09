@@ -956,7 +956,7 @@ kube-prometheus-stack:
       # hosts:
       #   - grafana.domain.com
       hosts:
-        - grafana.mgnt.fecredit.vn
+        - grafana.mgnt.fecredit.dev
 
       ## Path for grafana ingress
       path: /
@@ -967,7 +967,7 @@ kube-prometheus-stack:
       tls:
       # - secretName: grafana-general-tls
         - hosts:
-          - grafana.mgnt.fecredit.vn
+          - grafana.mgnt.fecredit.dev
 
     sidecar:
       dashboards:
