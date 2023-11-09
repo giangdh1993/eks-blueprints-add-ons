@@ -966,8 +966,8 @@ kube-prometheus-stack:
       ##
       tls:
       # - secretName: grafana-general-tls
-        hosts:
-        - grafana.mgnt.fecredit.vn
+        - hosts:
+          - grafana.mgnt.fecredit.vn
 
     sidecar:
       dashboards:
