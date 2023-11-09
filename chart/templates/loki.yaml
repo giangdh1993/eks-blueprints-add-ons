@@ -13,7 +13,7 @@ spec:
     path: add-ons/loki
     targetRevision: {{ .Values.targetRevision }}
     helm:
-      values: 
+      values: |
         loki:
         {{- toYaml .Values.loki | nindent 10 }}
   destination:
