@@ -901,6 +901,16 @@ kube-prometheus-stack:
   grafana:
     enabled: true
     namespaceOverride: ""
+    persistence:
+      type: pvc
+      enabled: false
+      storageClassName: resize-sc
+      accessModes:
+        - ReadWriteOnce
+      size: 10Gi
+      # annotations: {}
+      finalizers:
+        - kubernetes.io/pvc-protection    
 
     ## ForceDeployDatasources Create datasource configmap even if grafana deployment has been disabled
     ##
