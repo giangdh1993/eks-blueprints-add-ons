@@ -18,7 +18,7 @@ spec:
         {{- toYaml .Values.promtail | nindent 10 }}
   destination:
     server: {{ .Values.destinationServer | default "https://kubernetes.default.svc" }}
-    namespace: promtail
+    namespace: monitoring
   syncPolicy:
     automated:
       prune: true

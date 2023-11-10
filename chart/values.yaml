@@ -247,7 +247,7 @@ kubernetesDashboard:
 
 # promtail Values
 promtail:
-  enable: false
+  enable: true
 
 # kubecost Values
 kubecost:
