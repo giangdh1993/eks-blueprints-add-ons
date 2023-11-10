@@ -942,7 +942,8 @@ kube-prometheus-stack:
         token_url: "https://auth.mgnt.fecredit.dev/realms/fec-staff/protocol/openid-connect/token"
         api_url: "https://auth.mgnt.fecredit.dev/realms/fec-staff/protocol/openid-connect/userinfo"
         allow_sign_up: true
-        allow_assign_grafana_admin: true       
+        allow_assign_grafana_admin: true     
+        scopes: openid, email, groups  
       # auth:
       #   disable_login_form: true
       #   oauth_auto_login: true
