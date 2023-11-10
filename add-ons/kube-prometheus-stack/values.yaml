@@ -930,6 +930,17 @@ kube-prometheus-stack:
     defaultDashboardsTimezone: utc
 
     adminPassword: prom-operator
+    grafana.ini:
+      auth.generic_oauth:
+        enabled: true
+        name: "Keycloak-OAuth"
+        client_id: "grafana"
+        client_secret: "nHRqvKdHznsqUgPRKykfQFLh26WFNgpe"
+        auth_url: "https://auth.mgnt.fecredit.dev/realms/fec-staff/protocol/openid-connect/auth"
+        token_url: "https://auth.mgnt.fecredit.dev/realms/fec-staff/protocol/openid-connect/token"
+        api_url: "https://auth.mgnt.fecredit.dev/realms/fec-staff/protocol/openid-connect/userinfo"
+        allow_sign_up: true
+        allow_assign_grafana_admin: true       
 
     rbac:
       ## If true, Grafana PSPs will be created
